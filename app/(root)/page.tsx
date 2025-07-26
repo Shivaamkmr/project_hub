@@ -27,6 +27,7 @@ export default async function Home({searchParams} : {
     <Boxes />
     <h1 className="heading relative">
       Welcome To ProjectHub
+      SHIVAAM
     </h1>
     <p className="sub-heading !max-w-3xl relative">
      Where project meet like-minded people.

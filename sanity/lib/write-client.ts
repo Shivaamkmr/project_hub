@@ -1,15 +1,10 @@
-import { createClient } from "next-sanity"
-import "server-only"
-import { apiVersion, dataset, projectId, token } from "../env"
+// sanity/lib/write-client.ts
+import { createClient } from 'next-sanity'
 
 export const writeClient = createClient({
-    projectId,
-    dataset,
-    apiVersion,
-    useCdn: false,
-    token
-});
-
-if(!writeClient.config().token){
-    throw new Error('Sanity Write Token Not Found!');
-}
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET!,
+  apiVersion: process.env.NEXT_PUBLIC_SANITY_API_VERSION!,
+  useCdn: false,
+  token: process.env.SANITY_WRITE_CLIENT_TOKEN,
+})
